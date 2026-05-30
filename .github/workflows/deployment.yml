@@ -5,15 +5,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-      - name: lint code
-        run: npm run lint
+        uses: actions/checkout@v3        
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
       - name: Install dependencies
         run: npm ci
+      - name: lint code
+        run: npm run lint
       - name: Test application
         run: npm test
       - name: Build application
