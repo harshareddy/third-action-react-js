@@ -1,0 +1,10 @@
+name: issues event
+on: issues
+jobs:
+  issue-event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Handle issues event
+        run: 'echo Issue event triggered: ${{ toJSON(github.event) }}'
